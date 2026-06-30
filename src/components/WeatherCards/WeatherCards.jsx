@@ -11,8 +11,10 @@ export const WeatherCards = ({ weather }) => {
           key={title}
           className="  bg-[#1A1F2E] border-white/10 rounded-2xl p-6 "
         >
-          <Icon />
-          <p className="text-[#C2C6D6]">{title}</p>
+          <div className="flex gap-4 items-center">
+            <p className="text-[#C2C6D6]">{title}</p>
+            <Icon className="text-[#ADC6FF]" />
+          </div>
 
           <h2 className=" text-[#C2C6D6]   text-4xl mt-4">
             {value} {unit}

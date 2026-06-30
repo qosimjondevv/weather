@@ -28,7 +28,6 @@ export const TopBar = ({
           >
             {regions.map((item) => (
               <option value={item.name} key={item.name}>
-                {" "}
                 {item.name}
               </option>
             ))}
@@ -47,15 +46,15 @@ export const TopBar = ({
               placeholder="Search city..."
               className="pl-10  w-[420px] bg-[#101826] border-white/10 h-10 rounded-full "
             />
-            {!!region.length && (
+            {!!region.cities.length && (
               <div className="absolute top-12 w-full  z-20 cursor-pointer bg-[#101826] rounded-2xl overflow-hidden ">
-                {region.map((item) => (
+                {region.cities.map((item) => (
                   <div
-                    key={item.id}
+                    key={`${item.name}-${item.id}`}
                     onClick={() => chooseCity(item)}
                     className="px-4 py-3"
                   >
-                    {item.name}
+                    {item.name} , {item.country}
                   </div>
                 ))}
               </div>

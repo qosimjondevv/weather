@@ -8,7 +8,11 @@ export const useHome = () => {
   const region = useCountry(search);
 
   const chooseCity = (city) => {
-    setSelectRegion(city);
+    setSelectRegion({
+      name: city.name,
+      lat: city.latitude,
+      lon: city.longitude,
+    });
     setSearch("");
   };
 

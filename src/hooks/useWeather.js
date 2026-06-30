@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export const useWeather = ({ lat, lon }) => {
   const [weather, setWeather] = useState(null);
-  const [loading, setLoanding] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -11,14 +11,14 @@ export const useWeather = ({ lat, lon }) => {
 
     const load = async () => {
       try {
-        setLoanding(true);
+        setLoading(true);
         const data = await weatherAPI(lat, lon);
         setWeather(data);
         setError(null);
       } catch (err) {
         setError(err.message);
       } finally {
-        setLoanding(false);
+        setLoading(false);
       }
     };
 
