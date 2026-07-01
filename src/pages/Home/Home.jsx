@@ -6,7 +6,9 @@ export const Home = () => {
   const country = useHome();
 
   const { weather, loading, error } = useWeather(country.selectRegion);
-  if (loading) return <div className="flex justify-center ">Loading..</div>;
+
+  if (loading)
+    return <div className="flex justify-center p-12 ">Loading..</div>;
 
   if (error) return <div> {error} </div>;
   return (

@@ -17,24 +17,28 @@ export const Days = ({ weather }) => {
           const WeatherIcon = weatherIcons(weather.daily.weathercode[i]);
 
           return (
-            <div key={date} className="flex items-center justify-between">
-              <span className="text-white/60 w-[90px]">
-                {i === 0 ? "Today" : days(date)}
-              </span>
-
-              <WeatherIcon className="text-blue-400" size={20} />
-
-              <div className="flex items-center gap-3">
+            <div key={date} className="flex gap-6 items-center">
+              <div className="w-[90px]">
                 <span className="text-white/60">
+                  {i === 0 ? "Today" : days(date)}
+                </span>
+              </div>
+
+              <div className="flex  justify-center">
+                <WeatherIcon size={20} className="text-blue-400" />
+              </div>
+
+              <div className="flex items-center gap-5 flex-1">
+                <span className="w-[35px] text-right text-white/60">
                   {weather.daily.temperature_2m_min[i]}°
                 </span>
 
                 <Progress
-                  className="w-[70px] h-[4px]"
+                  className="flex-1 h-[4px]"
                   value={(weather.daily.temperature_2m_max[i] / maxTemp) * 100}
                 />
 
-                <span className="text-white">
+                <span className="w-[35px] text-white">
                   {weather.daily.temperature_2m_max[i]}°
                 </span>
               </div>
@@ -45,7 +49,3 @@ export const Days = ({ weather }) => {
     </Card>
   );
 };
-
-// const WeatherIcon = weatherIcons(weather.current_weather.weathercode);
-
-// <WeatherIcon className="text-blue-400" />

@@ -1,11 +1,15 @@
-import { Cloud, CloudRain, Snowflake, Sun } from "lucide-react";
+import { Sun, Cloud, CloudRain, Snowflake } from "lucide-react";
 
 export const weatherIcons = (code) => {
   if (code === 0) return Sun;
 
-  if (code < 60) return Cloud;
+  if (code < 51) return Cloud;
 
-  if (code < 80) return CloudRain;
+  if (code < 70 || (code >= 80 && code < 90)) {
+    return CloudRain;
+  }
 
-  return Snowflake;
+  if (code < 90) return Snowflake;
+
+  return Cloud;
 };
