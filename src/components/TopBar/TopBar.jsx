@@ -50,7 +50,7 @@ export const TopBar = ({
               <div className="absolute top-12 w-full  z-20 cursor-pointer bg-[#101826] rounded-2xl overflow-hidden ">
                 {region.cities.map((item) => (
                   <div
-                    key={`${item.name}-${item.id}`}
+                    key={item.id}
                     onClick={() => chooseCity(item)}
                     className="px-4 py-3"
                   >

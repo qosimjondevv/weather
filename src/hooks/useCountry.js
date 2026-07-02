@@ -6,7 +6,7 @@ export const useCountry = (search) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (search.length < 2) {
+    if (search.trim().length < 2) {
       setCities([]);
       return;
     }

@@ -12,6 +12,8 @@ export const useWeather = ({ lat, lon }) => {
     const load = async () => {
       try {
         setLoading(true);
+
+        setError(null);
         const data = await weatherAPI(lat, lon);
         setWeather(data);
         setError(null);
