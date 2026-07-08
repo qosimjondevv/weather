@@ -6,6 +6,13 @@
 }
 body {
   margin: 0;
+  transition: 0.3s;
+}
+html.dark body {
   background: #070b14;
   color: white;
+}
+html.light body {
+  background: #f5f7fb;
+  color: black;
 }

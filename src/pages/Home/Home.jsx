@@ -13,7 +13,7 @@ export const Home = () => {
       <main className="my-container">
         {loading && (
           <div className="fixed inset-0 flex items-center justify-center">
-            <Loader2 className="w-10 h-10 " />
+            <Loader2 className="w-10 h-10 animate-spin " />
           </div>
         )}
         {error && <div className=" text-center text-red-500">{error}</div>}

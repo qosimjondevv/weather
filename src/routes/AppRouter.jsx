@@ -1,10 +1,11 @@
+import { Home, Setting } from "@/pages";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "@/pages/Home/Home";
 
 export const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="setting" element={<Setting />} />
     </Routes>
   );
 };
